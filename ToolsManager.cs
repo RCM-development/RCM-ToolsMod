@@ -111,6 +111,7 @@ namespace RCM_Tools{
                         ShowWindow(hWnd, SW_RESTORE);
                         SetForegroundWindow(hWnd);
                     }
+                    else RCMManager.Log($"cant focus: {tool.name}. probably a command line tool");
                     return;
                 }
             }
