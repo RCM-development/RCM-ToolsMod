@@ -49,6 +49,7 @@ namespace RCM_Tools{
                     mod.CreateButtonField($"Install {tool.name}", () => InstallTool(tool));
                 else mod.CreateButtonField($"Launch {tool.name}", () => LaunchTool(tool));
             }
+            mod.CreateButtonField($"Browse Tools Folder", BrowseTools);
         }
 
 
@@ -123,7 +124,12 @@ namespace RCM_Tools{
             }
         }
 
-
+        void BrowseTools(){
+            string toolsFolder = Path.Combine(AppContext.BaseDirectory, "RCM");
+            if (!Directory.Exists(toolsFolder))
+                Directory.CreateDirectory(toolsFolder);
+            Process.Start("explorer.exe", toolsFolder);
+        }
 
     private static readonly HttpClient http = new HttpClient();
     public static async Task<string> DownloadToolLatestRelease(string github_download_link, string outputFolder, string toolname){
