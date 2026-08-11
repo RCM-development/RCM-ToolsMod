@@ -34,9 +34,8 @@
     <!-- All Unity engine + package assemblies shipped with the game -->
     <Reference Include="$(Managed)\Unity*.dll"><Private>false</Private></Reference>
     <Reference Include="$(Managed)\Newtonsoft.Json.dll"><Private>false</Private></Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Net.Http.dll</HintPath>
-    </Reference>
+	  
+	<Reference Include="System.Net.Http" />
   </ItemGroup>
 
   <ItemGroup>
